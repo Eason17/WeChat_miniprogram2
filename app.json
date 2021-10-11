@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login",
+    "pages/reservation/reservation",
+    "pages/result/result",
+    "pages/memo/memo",
+    "pages/register",
+    "pages/map",
+    "pages/admin/admin",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "公共资源借用管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "076bbd",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/image/memo.png",
+        "iconPath": "/image/memo1.png",
+        "pagePath": "pages/memo/memo",
+        "text": "备忘录"
+      },
+      {
+        "selectedIconPath": "/image/search.png",
+        "iconPath": "/image/search1.png",
+        "pagePath": "pages/reservation/reservation",
+        "text": "资源查询"
+      },
+      {
+        "selectedIconPath": "/image/map.png",
+        "iconPath": "/image/map1.png",
+        "pagePath": "pages/map",
+        "text": "资源定位"
+      },
+      {
+        "selectedIconPath": "/image/my.png",
+        "iconPath": "/image/my1.png",
+        "pagePath": "pages/user/user",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

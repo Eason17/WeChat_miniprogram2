@@ -1,0 +1,21 @@
+<!--pages/memo/memo.wxml-->
+<view class = "container1">
+  <image class='background' src="/image/1.jpg" mode="aspectFill"></image>
+  <view class = "today">
+    <text>{{Today}}</text>
+  </view>
+  <view class = "additem">
+    <view class = "add">
+      <input value = "{{input}}" auto-focus  class = "InputAdd" placeholder='请输入您的计划(回车添加)' placeholder-class="phcolor" bindinput='AddInput' bindconfirm='AddConfirm'/>
+    </view>
+  </view>
+  <view class = "todo-today1">
+    <view class = "todo-today">
+      <view class = "today-item" wx:for = "{{TodayList}}" wx:key="{{ index }}" bindtap="toggleTodoHandle" id = "{{index}}" >
+        <!-- <icon class = "itemcheckbox"  type = "{{item.completed ? 'success' : 'circle'}}"  color="#00a2ea"/> -->
+        <text class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}">{{item.description}}</text>
+        <icon class = 'itemremove' type = 'clear' size = '20' color = "#00a2ea" bindtap="removeTodoHandle" id = '{{index}}' />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="container">
+  <image style="opacity={{0}}" class='background' src="/image/1.jpg" mode="aspectFill"></image>
+  <view class="login-from">
+ 
+    <!--用户名-->
+    <view class="inputView">
+      <image class="nameImage" src="../image/user.png"></image>
+      <label class="loginLab">用户名</label>
+      <input class="inputText" placeholder="请输入用户名" placeholder-class="placeholder-input" bindinput="phoneInput" />
+      <view class="line"></view>
+    <!--密码-->
+      <image class="keyImage" src="../image/lock.png"></image>
+      <label class="loginLab">密码</label>
+      <input class="inputText" password="true" placeholder="请输入密码" placeholder-class="placeholder-input" bindinput="passwordInput" />
+    </view>
+ 
+    <!--按钮-->
+    <view class="loginBtnView">
+			<button type="primary" class="loginBtn" bindtap="login">登录</button>
+			<button formType="reset" class="loginBtn" bindtap="register">注册</button>
+		</view>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+<!--pages/user/user.wxml-->
+<view class="user_container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="show_hidden" > 允许使用昵称、头像、信息 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view hidden="{{hiddenName}}" class="hidden">
+      <view class="content-top">
+        <view class="allow">
+          <image class="imgsize" src="/image/time.png"></image>
+          <button class="click_btn" bindtap="">审核中</button>
+        </view>
+        <view class="allow">
+          <image class="imgsize" src="/image/benefits.png"></image>
+          <button class="click_btn" bindtap="toggleDialog1">已批准</button>
+        </view>
+      </view>
+      <view class="content-top1">
+        <view class="allow">
+          <image class="imgsize" src="/image/used.png"></image>
+          <button class="click_btn" bindtap="">已使用</button>
+        </view>
+        <view class="allow">
+          <image class="imgsize" src="/image/unuse.png"></image>
+          <button class="click_btn" bindtap="">待使用</button>
+        </view>
+      </view>
+      <view class="content-top1">
+        <view class="allow">
+          <image class="imgsize" src="/image/history.png"></image>
+          <button class="click_btn" bindtap="">租借历史</button>
+        </view>
+        <view class="allow">
+          <image class="imgsize" src="/image/user_blue.png"></image>
+          <button class="click_btn" bindtap="">个人信息</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog1"/>
+  <view class="zan-dialog__container">
+		<view class="table">
+			<view class="tr bg-w">
+				<view class="th">申请用户</view>
+				<view class="th">申请物品</view>
+				<view class="th">使用时间</view>
+			</view>
+			<block wx:for="{{listData}}" wx:key="{{code}}">
+				<view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+					<view class="td">{{item.code}}</view>
+					<view class="td">{{item.text}}</view>
+					<view class="td">{{item.type}}</view>
+				</view>
+				<view class="tr" wx:else>
+					<view class="td">{{item.code}}</view>
+					<view class="td">{{item.text}}</view>
+					<view class="td">{{item.type}}</view>
+				</view>
+			</block>
+		</view>
+  </view>
+</view> -->

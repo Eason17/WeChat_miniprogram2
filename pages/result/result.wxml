@@ -1,0 +1,43 @@
+<view class="table">
+	<view class="tr bg-w">
+		<view class="th">资源编号</view>
+		<view class="th">资源名称</view>
+		<view class="th">剩余数量</view>
+		<view class="th"></view>
+	</view>
+	<block wx:for="{{listData}}" wx:key="{{code}}">
+		<view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+			<view class="td">{{item.code}}</view>
+			<view class="td">{{item.text}}</view>
+			<view class="td">{{item.type}}</view>
+			<view class="td"><button bindtap="listenerButton" type="primary">预约</button></view>
+			<modal title="提交申请" hidden="{{hiddenModal}}" confirm-text="确定" cancel-text="退出" bindconfirm="listenerConfirm" bindcancel="listenerCancel" >请选择开始预约时间
+				<picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+					<view class="tui-picker-detail">
+						{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+					</view>
+				</picker>
+				请选择结束时间
+				<picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+					<view class="tui-picker-detail">
+						{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+					</view>
+				</picker>
+			</modal>
+		</view>
+
+		<view class="tr" wx:else>
+			<view class="td">{{item.code}}</view>
+			<view class="td">{{item.text}}</view>
+			<view class="td">{{item.type}}</view>
+			<view class="td"><button bindtap="listenerButton" type="primary">预约</button></view>
+			<modal title="提交申请" hidden="{{hiddenModal}}" confirm-text="确定" cancel-text="退出" bindconfirm="listenerConfirm" bindcancel="listenerCancel" >您是否要提交申请
+				<picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+					<view class="tui-picker-detail">
+						选择日期时间: {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+					</view>		
+				</picker>
+			</modal>
+		</view>
+	</block>
+</view>

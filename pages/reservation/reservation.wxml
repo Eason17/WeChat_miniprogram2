@@ -1,0 +1,12 @@
+<!--reservation.wxml-->
+<view class="page">
+	<image class='background' src="/image/1.jpg" mode="aspectFill"></image>
+	<view class="reservation_container">
+		<view class="section">
+  		<form bindsubmit="formSubmit">
+				<input type="text" name="keyword" class="search_input" bindinput="bindKeyInput" placeholder="请输入要查询的资源" value="{{inputValue}}" />
+				<button class="btn-area" type="primary" bindtap="toggleDialog1" bindinput="bindKeyInput" disabled="{{disabled}}">查询</button>
+  		</form>
+		</view>
+	</view>
+</view>

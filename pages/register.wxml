@@ -1,0 +1,36 @@
+<!--pages/register.wxml-->
+<view class="inputView">
+  <label class="loginLab">用户名</label>
+  <input class="inputText" placeholder="请输入用户名" bindinput="phoneInput" />
+</view>
+<view class="line"></view>
+
+<view class="inputView">
+  <label class="loginLab">密码</label>
+  <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+</view>
+<view class="line"></view>
+
+<view class="inputView">
+  <label class="loginLab">确认密码</label>
+  <input class="inputText" password="true" placeholder="请确认密码" bindinput="passwordInput" />
+</view>
+<view class="line"></view>
+
+<view class="inputView">
+  <label class="loginLab">输入手机号</label>
+  <input class="inputText" placeholder="请输入手机号" bindinput="phoneInput" />
+</view>
+<view class="line"></view>
+
+<view class="inputView">
+  <view class="regionselect">请选择地区
+    <picker bindchange="changeRegion" mode = "region" value="{{region}}">
+      {{region[0]}} - {{region[1]}} - {{region[2]}}
+    </picker>
+  </view>
+</view>
+
+<view class="loginBtnView">
+	<button type="primary" class="loginBtn" bindtap="done">完成</button>
+</view>
